@@ -4,11 +4,72 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <title>My Portfolio | Kedaresh Pashakanti</title>
+
+    <!-- Main Styles -->
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(180deg, #ffffff, #f5f7fa);
+        overflow-x: hidden;
+      }
+
+      /* Hover & Animation Effects */
+      .btn {
+        transition: all 0.3s ease;
+      }
+      .btn:hover {
+        transform: translateY(-3px);
+        background: linear-gradient(90deg, #000000ff, #312d2fff);
+        color: white;
+      }
+
+      .project-img {
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+        border-radius: 15px;
+      }
+      .project-img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .icon {
+        transition: transform 0.3s ease;
+      }
+      .icon:hover {
+        transform: scale(1.2);
+      }
+
+      /* Navbar shadow */
+      nav {
+        background-color: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(6px);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+    </style>
   </head>
+
   <body>
+    <!-- Desktop Navigation -->
     <nav id="desktop-nav">
       <div class="logo">Kedaresh Pashakanti</div>
       <div>
@@ -20,8 +81,10 @@
         </ul>
       </div>
     </nav>
+
+    <!-- Hamburger Navigation -->
     <nav id="hamburger-nav">
-      <div class="logo">Kedaresh Pashakanti</div>
+      <div class="logo">Kedaresh </div>
       <div class="hamburger-menu">
         <div class="hamburger-icon" onclick="toggleMenu()">
           <span></span>
@@ -36,11 +99,16 @@
         </div>
       </div>
     </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/profile pic mine.png" alt="Kedaresh Pashakanti profile picture" />
+
+    <!-- Profile Section -->
+    <section id="profile" data-aos="fade-up">
+      <div class="section__pic-container" data-aos="zoom-in">
+        <img
+          src="./assets/profile pic mine.png"
+          alt="Profile picture"
+        />
       </div>
-      <div class="section__text">
+      <div class="section__text" data-aos="fade-up">
         <p class="section__text__p1">Hello, I'm</p>
         <h1 class="title">Kedaresh </h1>
         <p class="section__text__p2">Frontend Developer</p>
@@ -51,61 +119,59 @@
           >
             Download CV
           </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
+          <button
+            class="btn btn-color-1"
+            onclick="document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });"
+          >
             Contact Info
           </button>
         </div>
         <div id="socials-container">
           <img
             src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
+            alt="LinkedIn"
             class="icon"
             onclick="location.href='https://www.linkedin.com/in/kedaresh-pashakanti-728849356/'"
           />
           <img
             src="./assets/github.png"
-            alt="My Github profile"
+            alt="GitHub"
             class="icon"
             onclick="location.href='https://github.com/kedaresh-pashakanti'"
           />
         </div>
       </div>
     </section>
-    <section id="about">
+
+    <!-- About Section -->
+    <section id="about" data-aos="fade-right">
       <p class="section__text__p1">Get To Know More</p>
       <h1 class="title">About Me</h1>
       <div class="section-container">
-        <div class="section__pic-container">
+        <div class="section__pic-container" data-aos="zoom-in">
           <img
             src="./assets/aaaa.png"
-            alt="Profile picture"
+            alt="Profile"
             class="about-pic"
+            style="border-radius: 10px"
           />
         </div>
-        <div class="about-details-container">
+        <div class="about-details-container" data-aos="fade-left">
           <div class="about-containers">
             <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
+              <img src="./assets/experience.png" alt="icon" class="icon" />
               <h3>Experience</h3>
-              <p>3+ month <br />Data Analyst</p>
+              <p>1 Month<br />Data Analyst Intern</p>
             </div>
             <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
+              <img src="./assets/education.png" alt="icon" class="icon" />
               <h3>Education</h3>
-              <p>Bachelor of Engineering<br />In Information Technology</p>
+              <p>Bachelor of Engineering (IT)</p>
             </div>
           </div>
           <div class="text-container">
             <p>
-I’m a passionate Information Technology student with a strong interest in web development and data-driven solutions. 
+              I’m a passionate Information Technology student with a strong interest in web development and data-driven solutions. 
 I enjoy building interactive, responsive, and visually engaging projects that combine creativity with clean code. 
 With experience in modern frameworks like React, Vite, and Node.js, I focus on creating efficient digital experiences. 
 I’m constantly exploring new technologies to enhance my skills and turn innovative ideas into impactful solutions.
@@ -113,13 +179,9 @@ I’m constantly exploring new technologies to enhance my skills and turn innova
           </div>
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
     </section>
+
+    <!-- Experience Section -->
     <section id="experience">
       <p class="section__text__p1">Explore My</p>
       <h1 class="title">Experience</h1>
@@ -157,8 +219,8 @@ I’m constantly exploring new technologies to enhance my skills and turn innova
                   class="icon"
                 />
                 <div>
-                  <h3>SASS</h3>
-                  <p>Basic</p>
+                  <h3>Python</h3>
+                  <p>Intermediate</p>
                 </div>
               </article>
               <article>
@@ -197,7 +259,7 @@ I’m constantly exploring new technologies to enhance my skills and turn innova
             </div>
           </div>
           <div class="details-container">
-            <h2 class="experience-sub-title">Frontend Development</h2>
+            <h2 class="experience-sub-title">Backend & Tools</h2>
             <div class="article-container">
               <article>
                 <img
@@ -217,7 +279,7 @@ I’m constantly exploring new technologies to enhance my skills and turn innova
                   class="icon"
                 />
                 <div>
-                  <h3>Node JS</h3>
+                  <h3>MongoDB</h3>
                   <p>Intermediate</p>
                 </div>
               </article>
@@ -228,8 +290,8 @@ I’m constantly exploring new technologies to enhance my skills and turn innova
                   class="icon"
                 />
                 <div>
-                  <h3>Express JS</h3>
-                  <p>Basic</p>
+                  <h3>Firebase</h3>
+                  <p>Experienced</p>
                 </div>
               </article>
               <article>
@@ -242,6 +304,9 @@ I’m constantly exploring new technologies to enhance my skills and turn innova
                   <h3>Git</h3>
                   <p>Intermediate</p>
                 </div>
+                
+                
+                
               </article>
             </div>
           </div>
@@ -254,12 +319,14 @@ I’m constantly exploring new technologies to enhance my skills and turn innova
         onclick="location.href='./#projects'"
       />
     </section>
-    <section id="projects">
+
+    <!-- Projects Section -->
+    <section id="projects" data-aos="zoom-in-up">
       <p class="section__text__p1">Browse My Recent</p>
       <h1 class="title">Projects</h1>
       <div class="experience-details-container">
         <div class="about-containers">
-          <div class="details-container color-container">
+          <div class="details-container color-container" data-aos="flip-left">
             <div class="article-container">
               <img
                 src="./assets/project1.png"
@@ -275,15 +342,10 @@ I’m constantly exploring new technologies to enhance my skills and turn innova
               >
                 Github
               </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/kedaresh-pashakanti/Manovishleshan'"
-              >
-                Live Demo
-              </button>
             </div>
           </div>
-          <div class="details-container color-container">
+
+          <div class="details-container color-container" data-aos="flip-left">
             <div class="article-container">
               <img
                 src="./assets/project2.png"
@@ -291,11 +353,13 @@ I’m constantly exploring new technologies to enhance my skills and turn innova
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">Placement Oriented Question Generator</h2>
+            <h2 class="experience-sub-title project-title">
+             Placement Oriented Question Generator
+            </h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/kedaresh-pashakanti/Placement-Oriented-Question-Generator'"
+                onclick="location.href='https://github.com/shreya11-github/Ai-Resume-Analyzer'"
               >
                 Github
               </button>
@@ -307,7 +371,8 @@ I’m constantly exploring new technologies to enhance my skills and turn innova
               </button>
             </div>
           </div>
-          <div class="details-container color-container">
+
+          <div class="details-container color-container" data-aos="flip-left">
             <div class="article-container">
               <img
                 src="./assets/project33.png"
@@ -315,7 +380,9 @@ I’m constantly exploring new technologies to enhance my skills and turn innova
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">Ai Resume Analyzer</h2>
+            <h2 class="experience-sub-title project-title">
+              Ai Resume Analyzer
+            </h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
@@ -323,46 +390,37 @@ I’m constantly exploring new technologies to enhance my skills and turn innova
               >
                 Github
               </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/kedaresh-pashakanti/Ai-Resume-Analyzer/'"
-              >
-                Live Demo
-              </button>
             </div>
           </div>
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
     </section>
-    <section id="contact">
+
+    <!-- Contact Section -->
+    <section id="contact" data-aos="fade-up">
       <p class="section__text__p1">Get in Touch</p>
       <h1 class="title">Contact Me</h1>
       <div class="contact-info-upper-container">
-        <!-- Update the email section to make it clickable -->
-        <div class="contact-info-container">
-          <img 
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon"
-          />
-          <a href="mailto:kedarpashakanti25@gmail.com" class="contact-info-text">kedarpashakanti25@gmail.com</a>
+        <div class="contact-info-container" data-aos="fade-right">
+          <img src="./assets/email.png" alt="Email" class="icon" />
+          <p>
+            <a href="mailto:kedarpashakanti25@gmail.com"
+              >kedarpashakanti25@gmail.com</a
+            >
+          </p>
         </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com/in/kedaresh-pashakanti-728849356/">LinkedIn</a></p>
+        <div class="contact-info-container" data-aos="fade-left">
+          <img src="./assets/linkedin.png" alt="LinkedIn" class="icon" />
+          <p>
+            <a href="https://www.linkedin.com/in/kedaresh-pashakanti-728849356/"
+              >LinkedIn</a
+            >
+          </p>
         </div>
       </div>
     </section>
+
+    <!-- Footer -->
     <footer>
       <nav>
         <div class="nav-links-container">
@@ -376,6 +434,17 @@ I’m constantly exploring new technologies to enhance my skills and turn innova
       </nav>
       <p>Copyright &#169; 2025 Kedaresh Pashakanti. All Rights Reserved.</p>
     </footer>
+
+    <!-- JS -->
     <script src="script.js"></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+    </script>
   </body>
 </html>
